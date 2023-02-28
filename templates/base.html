@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Travel Agency</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none ;
+    text-decoration: none;
+
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: rgba(0,0,0,0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.logo{
+    font: 18px;
+    letter-spacing: 2px;
+    color: crimson;
+}  
+
+  
+  
+.nav-menu li{
+    display: inline-block;
+    padding: 10px 20px;    
+}
+.nav-menu li a{
+    color: white;
+    transition: 0.6s;
+}
+.nav-menu li a:hover{
+    color: crimson;
+}
+.nav-menu form{
+    color: blue;
+}
+
+.colorful {
+  background: #4b79a1;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #283e51, #4b79a1);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #283e51, #4b79a1);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 0px;
+  padding: 0px 0 1rem 0 !important;
+}
+
+.form-card {
+  background: #fff;
+  border-bottom: 7px solid #1e3c72;
+  border-top: 7px solid #1e3c72;
+  color: black;
+  padding: 0 2rem;
+}
+
+.form-card h3 {
+  color: #000;
+  padding: 1rem 0 0.1rem 0;
+}
+
+/* hotel card */
+.hotel-card {
+  border: none !important;
+}
+.hotel-card .card-img-top {
+  border-radius: 0px;
+  height: 230px;
+}
+
+.hotel-card .card-body {
+  padding: 0px !important;
+}
+
+.hotel-card .card-body h5 {
+  margin: 0.5rem 0;
+}
+
+.hotel-card .card-body h5 a {
+  color: #777;
+}
+
+.hotel-card .card-body p {
+  font-size: 0.9rem;
+}
+/* end of hotel cards */
+
+/* business process section */
+#process {
+  background: #2980b9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2c3e50, #2980b9);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2c3e50, #2980b9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+
+#process h2,
+h3 {
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  margin: 1rem 0;
+  padding: 0 0 1rem 0;
+}
+
+.icon {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 33px 29px;
+
+  background: #2980b9;
+  color: #fff;
+}
+
+#process .icon {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#process .icon .fa {
+  font-size: 2rem;
+  margin: 11px 2px;
+}
+
+#process .process-step {
+  text-align: center;
+}
+
+#process .process-step h3 {
+  {% comment %} color: white; {% endcomment %}
+  margin-top: 2.2rem;
+}
+
+#stat-counter {
+  text-align: center;
+}
+#stat-counter h2 {
+  font-size: 3rem;
+
+  border-bottom: 1px solid #777;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+#stat-counter p {
+  padding-top: 1rem;
+}
+
+#stat-counter .counter {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #2980b9;
+  font-size: 50px;
+  font-weight: 100;
+}
+.search-container {
+  {% comment %} background: #d3d3d3; {% endcomment %}
+}
+.search-card-result {
+  box-shadow: 7px 15px 17px rgba(71, 51, 87, 54);
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  background-color: #fff;
+}
+.search-card-result img {
+  height: 190px;
+}
+.search-card-result h5 {
+  font-style: 1.1rem;
+  font-weight: 700;
+}
+.search-card-result p {
+  font-size: 0.9rem;
+}
+
+.search-card-result .more-offers p {
+  margin-bottom: 0.3rem;
+}
+
+.more-offers .additional {
+  padding-top: 0.2rem;
+  font-weight: 700;
+}
+
+.fa.checked {
+  color: orange;
+}
+
+.map-container-btn {
+  height: 100px;
+  
+  box-shadow: 7px 15px 17px rgba(71, 51, 87, 54);
+  background-color: wheat;
+}
+
+.map-container-btn .btn {
+  margin-top: 30px;
+}
+
+.filter-card {
+  padding: 0;
+  background: #fff;
+  color: black;
+}
+
+.filter-card h5 {
+  margin: 10px 0;
+  padding: 1rem;
+
+  box-shadow: 7px 15px 17px rgba(71, 51, 87, 54);
+  color: #000;
+}
+.filter-card form {
+  box-shadow: 7px 15px 17px rgba(71, 51, 87, 54);
+  padding: 0.5rem 2rem;
+}
+.map-btn {
+  background-color: #fff !important;
+}
+
+
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+
+  background: #1e3c72;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+
+  background: #1e3c72;
+  cursor: pointer;
+}
+
+</style>      
+  </head>
+  <body>
+
+    
+
+
+        <div class="navbar">
+         <div class="logo"><h1>Travel Agency</h1></div>       
+            
+          <div class="nav-menu">
+            
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/signup">Signup</a>
+            </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/signout">SignOut</a>
+              </li>
+
+
+                 
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/topplaces">Top Places</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/hotel">Hotels</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact Us</a>
+              </li>
+            
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+
+    {% if messages %}
+    {% for message in messages%}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+{% block body %}
+
+
+{% endblock body %}    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
