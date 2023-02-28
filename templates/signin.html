@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Signup</title>
+        <title>Signin</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -23,14 +23,14 @@
         <div class='container'>
             <div class="form-card">
                 <h2>Login</h2>
-                <form method="post" action="/login">
+                <form method="post" action="/signin">
                 {% csrf_token %}    
                     <label for="">Username</label>
                     <input type='text' id='username' name='username' placeholder='Create a user name'>
                     <br>
                     
                     <label for="">Password</label>
-                    <input type='password' id='password' name='pass1' placeholder='Create new password'>
+                    <input type='password' id='pass1' name='pass1' placeholder='Create new password'>
                     <br>
                     
 

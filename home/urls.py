@@ -11,7 +11,7 @@ urlpatterns = [
     path("contact",views.contact,name='contact'),
     path("places",views.places,name='places'),
     path("signup",views.signup,name='signup'),
-    path("login",views.login,name='login'),
+    path("signin",views.signin,name='signin'),
     path("signout",views.signout,name='signout'),
     
 ]

@@ -55,7 +55,9 @@ def signup(request):
         pass1 = request.POST['pass1']
         pass2 = request.POST['pass2']
 
-        myuser = User.objects.create_user(username,email,pass1,pass2)
+        myuser = User.objects.create_user(username,pass1,pass2)
+        myuser.email= email
+
         myuser.first_name = fname
         myuser.last_name = lname
 
@@ -63,13 +65,13 @@ def signup(request):
 
         messages.success(request,"your account has been created.")
 
-        return redirect("login")
+        return redirect("signin")
         
 
     return render(request,"signup.html")
 
 
-def login(request):
+def signin(request):
 
     if request.method=="POST":
         username = request.POST['username']
@@ -79,15 +81,15 @@ def login(request):
 
         if user is not None:
             login(request,user)
-            fname=user.firstname
-            return render(request,'index',{'fname':fname})
+            fname=user.first_name
+            return render(request,'index.html',{'fname':fname})
         else:
-            messages.error(request,"Bad Credentials!")
+            messages.error(request,"User not found!")
             return redirect('home')    
 
 
 
-    return render(request,"login.html")
+    return render(request,"signin.html")
 
 
 def signout(request):
