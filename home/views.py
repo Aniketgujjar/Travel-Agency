@@ -21,8 +21,32 @@ def topplaces(request):
 def hotel(request):
     # return HttpResponse("This is servicespage")
     return render(request,"hotel.html",)
-def places(request):
-    return render(request,"places.html",)
+def delhi(request):
+    return render(request,"delhi.html",)
+def vrindavan(request):
+    return render(request,"vrindavan.html",)
+def vaishnodevi(request):
+    return render(request,"vaishnodevi.html",)
+def agra(request):
+    return render(request,"agra.html",)
+def mumbai(request):
+    return render(request,"mumbai.html",)
+def goa(request):
+    return render(request,"goa.html",)
+def jaishlmair(request):
+    return render(request,"jaishlmair.html",)
+def jaipur(request):
+    return render(request,"jaipur.html",)
+def himachal(request):
+    return render(request,"himachal.html",)
+def lehladakh(request):
+    return render(request,"lehladakh.html",)
+def kedarnath(request):
+    return render(request,"kedarnath.html",)
+def shimla(request):
+    return render(request,"shimla.html",)
+def manali(request):
+    return render(request,"manali.html",)
 
 
 
