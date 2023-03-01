@@ -19,7 +19,8 @@ def topplaces(request):
     return render(request,"topplaces.html",) 
 
 def hotel(request):
-    # return HttpResponse("This is servicespage")
+
+    
     return render(request,"hotel.html",)
 def delhi(request):
     return render(request,"delhi.html",)
