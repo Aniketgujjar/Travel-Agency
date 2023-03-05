@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.site.site_header = "Aniket Admin"
 admin.site.site_title = "Aniket Admin Portal"
@@ -24,3 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls'))
 ]
+
+urlpatterns += staticfiles_urlpatterns()  
